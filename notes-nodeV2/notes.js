@@ -12,46 +12,57 @@ var fetchNotes = () => {
   }
 }
 
-var saveNotes(notes){
+var saveNotes = (notes) => {
     fs.writeFileSync('notes-data.json', JSON.stringify(notes));
 }
 
 var addNote = (title, body) => {
-var notes = fetchNotes();
+var notes = fetchNotes(); //notes will contain the exisitng notes in the file
 var note = {
   title,
   body
 };
-//fetch existing notes on the file
-// inside try block because if the file notes-add.json doensn't exist then there would be error
-
-
 //to keep the title of the notes unique, if duplicateNotes contain any values then their is a duplicate entry.
-var duplicateNotes = notes.filter((note)=>note.title === title);
+var duplicateNotes = notes.filter((param)=>param.title === title);
 // if duplicateNotes is empty then we aren't trying to insert any duplicate note in the file
 if(duplicateNotes.length ===0){
   notes.push(note);
 saveNotes(notes);
-} else {
-  console.log('A note with the title :\"', title + '\" already exisits, Please provide a unique title');
+return note;
 }
 }
 
 var listNotes = () => {
-  console.log('Listing a.ll notes');
+  return fetchNotes();
 }
 
 var removeNote = (title) => {
-console.log('Removing note with title : ', title);
+//fetch Notes
+var notes = fetchNotes();
+// filter notes, removing the one with the title of argument
+var filteredNotes = notes.filter((param) => param.title !== title);
+//save new notes array
+saveNotes(filteredNotes);
+
+return (notes.length !== filteredNotes.length);
 }
 
 var readNote = (title) => {
-console.log('Reading note with title :', title);
+var notes = fetchNotes();
+var filteredNotes = notes.filter((param) => param.title === title);
+return filteredNotes[0];
+}
+
+var logNote = (note) => {
+  console.log('----------');
+  console.log('Title:  '+ note.title);
+  console.log('Body:  '+ note.body);
 }
 
 module.exports = {
   addNote,
   listNotes,
   removeNote,
-  readNote
+  readNote,
+  logNote
 };
