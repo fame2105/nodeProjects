@@ -1,0 +1,10 @@
+Views is the default directory that express uses for our templates, hence the name of the directory
+is important here.
+
+We would be creating *.hbs using hbs module we installed using npm, here which would be treated as our templates
+
+
+
+<!-- Delete these comment before activating the server -->
+<!-- for injecting data into the template files(*.hbs) we use {{object_key}} -->
+<!-- for injecting templates, also known as partials(*.hbs) into the another template files(*.hbs) we use {{> partial_file_name}} -->
