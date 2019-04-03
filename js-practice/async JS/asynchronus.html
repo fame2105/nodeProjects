@@ -1,0 +1,57 @@
+<html>
+  <body>
+    <h1>Asynchronus Java Script</h1>
+    <script>
+      // const second = () => {
+      //   setTimeout(() => {
+      //     console.log("Async Hey There");
+      //   }, 2000);
+      // };
+      // const first = () => {
+      //   console.log("first");
+      //   second();
+      //   console.log("The End");
+      // };
+      // first();
+
+      // Example of callback hell
+      // function getRecipe() {
+      //     setTimeout(() => {
+      //       const recipeIds = [234, 890, 573, 312];
+      //       console.log(`Recipe Ids = ${recipeIds}`);
+      //       // second setTimeout nested within first
+      //       setTimeout(
+      //         recipeId => {
+      //           const recipe = {
+      //             title: "Cold Coffee",
+      //             chef: "Fame Issrani"
+      //           };
+      //           console.log(`${recipeId} : Title = ${recipe.title}`);
+
+      //           // third setTimeout nested within second
+      //           setTimeout(
+      //             chef => {
+      //               const recipe2 = {
+      //                 title: "Bread Omlette",
+      //                 chef: "Fame Issrani"
+      //               };
+      //               console.log(
+      //                 `Other Recipes from chef ${chef} are : Title = ${
+      //                   recipe2.title
+      //                 }
+      //                 }`
+      //               );
+      //             },
+      //             1500,
+      //             recipe.chef
+      //           );
+      //         },
+      //         1000,
+      //         recipeIds[3]
+      //       );
+      //     }, 1500);
+      //   }
+      //   getRecipe();
+    </script>
+  </body>
+</html>
