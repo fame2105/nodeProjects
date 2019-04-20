@@ -10,6 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "mongodb": "^3.1.10"
+=======
+    "mongodb": "^3.1.10",
+    "validator": "^10.11.0"
+>>>>>>> 6c812a6a0f3474da6d9e00447fee98d2a911da13
   }
 }
